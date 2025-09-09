@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electric Vehicles vs Diesel Cars</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: Arial, sans-serif; background:#f9fafb; color:#333; }
+
+    /* Navbar */
+    nav {
+      background:#222; color:white;
+      padding:1rem 2rem;
+      text-align:center;
+      font-size:1.5rem;
+      font-weight:bold;
+    }
+    nav span { color:#4ade80; }
+
+    /* Main Section (Options) */
+    .options {
+      display:flex; justify-content:center; gap:30px;
+      margin:50px auto; flex-wrap:wrap;
+    }
+    .option {
+      flex:1; min-width:250px;
+      background:white; padding:30px; border-radius:15px;
+      box-shadow:0 6px 15px rgba(0,0,0,0.1);
+      text-align:center; cursor:pointer;
+      transition:transform 0.3s, background 0.3s;
+    }
+    .option:hover {
+      transform:translateY(-8px);
+      background:#f1f5f9;
+    }
+    .option h2 {
+      margin-bottom:15px;
+      color:#0284c7;
+    }
+
+    /* Info Sections */
+    .info {
+      display:none;
+      max-width:900px;
+      margin:30px auto;
+      padding:30px;
+      background:white;
+      border-radius:12px;
+      box-shadow:0 6px 15px rgba(0,0,0,0.1);
+      animation: fadeIn 0.5s ease-in-out;
+      line-height:1.6;
+    }
+    .info h2 { margin-bottom:15px; color:#16a34a; }
+    .info ul { margin-left:20px; line-height:1.7; }
+
+    /* Table */
+    table {
+      width:100%; border-collapse:collapse;
+      margin-top:20px;
+    }
+    table, th, td { border:1px solid #ddd; }
+    th, td { padding:12px; text-align:center; }
+    th { background:#0284c7; color:white; }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(10px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+
+    /* Footer */
+    footer {
+      background:#222; color:white; text-align:center;
+      padding:15px; margin-top:50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    Electric Vehicles vs <span>Diesel Cars</span>
+  </nav>
+
+  <!-- Options -->
+  <div class="options">
+    <div class="option" onclick="showInfo('ev')">
+      <h2>⚡ EV Cars</h2>
+      <p>Clean, efficient, and future-ready vehicles.</p>
+    </div>
+    <div class="option" onclick="showInfo('diesel')">
+      <h2>🛢️ Diesel Cars</h2>
+      <p>Reliable, powerful, but not so eco-friendly.</p>
+    </div>
+    <div class="option" onclick="showInfo('comparison')">
+      <h2>📊 Comparison</h2>
+      <p>See EV vs Diesel side by side.</p>
+    </div>
+  </div>
+
+  <!-- EV Section -->
+  <div id="ev" class="info">
+    <h2>Electric Cars (EVs)</h2>
+    <p>Electric Vehicles run on rechargeable batteries and electric motors instead of internal combustion engines.</p>
+    <h3>✅ Advantages</h3>
+    <ul>
+      <li>Low running cost (electricity is cheaper than diesel)</li>
+      <li>Zero tailpipe emissions – eco-friendly</li>
+      <li>Quiet, smooth, and futuristic driving experience</li>
+      <li>Lower maintenance (fewer moving parts)</li>
+      <li>Government subsidies and tax benefits in many regions</li>
+    </ul>
+    <h3>⚠️ Challenges</h3>
+    <ul>
+      <li>High purchase cost compared to diesel cars</li>
+      <li>Limited charging stations in some areas</li>
+      <li>Longer charging times than refueling</li>
+      <li>Battery degradation over years</li>
+    </ul>
+    <h3>🔮 Future of EVs</h3>
+    <p>With advancements in battery technology (solid-state batteries, faster charging), EVs are expected to dominate the market by 2035 in most countries.</p>
+  </div>
+
+  <!-- Diesel Section -->
+  <div id="diesel" class="info">
+    <h2>Diesel Cars</h2>
+    <p>Diesel cars use internal combustion engines that run on diesel fuel. They are known for power and efficiency on highways.</p>
+    <h3>✅ Advantages</h3>
+    <ul>
+      <li>Higher fuel efficiency compared to petrol cars</li>
+      <li>Longer driving range (600–800 km on a full tank)</li>
+      <li>Quick refueling (5 minutes vs hours for EVs)</li>
+      <li>Lower upfront cost compared to EVs</li>
+    </ul>
+    <h3>⚠️ Challenges</h3>
+    <ul>
+      <li>High fuel costs and dependency on fossil fuels</li>
+      <li>Produces CO₂, NOx, and particulate emissions → harmful for environment</li>
+      <li>Higher maintenance costs (engine oil, filters, servicing)</li>
+      <li>Noise and vibration compared to EVs</li>
+    </ul>
+    <h3>🔮 Future of Diesel Cars</h3>
+    <p>Due to rising pollution concerns, many countries are phasing out diesel cars. By 2030, stricter emission norms will reduce their popularity.</p>
+  </div>
+
+  <!-- Comparison Section -->
+  <div id="comparison" class="info">
+    <h2>EV vs Diesel Comparison</h2>
+    <p>Here is a side-by-side comparison of Electric Cars vs Diesel Cars:</p>
+    <table>
+      <tr>
+        <th>Factor</th>
+        <th>EV Cars</th>
+        <th>Diesel Cars</th>
+      </tr>
+      <tr><td>Fuel Cost</td><td>Low (₹1–2/km)</td><td>High (₹6–8/km)</td></tr>
+      <tr><td>Maintenance</td><td>Low</td><td>High</td></tr>
+      <tr><td>Pollution</td><td>Zero emissions</td><td>High CO₂, NOx</td></tr>
+      <tr><td>Range</td><td>200–500 km</td><td>600–800 km</td></tr>
+      <tr><td>Initial Cost</td><td>High (₹10–20L)</td><td>Medium (₹7–15L)</td></tr>
+      <tr><td>Refueling/Charging</td><td>30–60 min charging</td><td>5 min refuel</td></tr>
+      <tr><td>Government Support</td><td>Subsidies & tax benefits</td><td>No major benefits</td></tr>
+    </table>
+    <h3>📈 Final Verdict</h3>
+    <p>EVs are best for city driving and eco-friendly transport, while diesel cars are still practical for long-distance travel where charging stations are limited.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EV vs Diesel | Made with  using HTML, CSS & JS</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function showInfo(sectionId) {
+      document.querySelectorAll('.info').forEach(div => div.style.display = 'none');
+      document.getElementById(sectionId).style.display = 'block';
+      document.getElementById(sectionId).scrollIntoView({behavior: 'smooth'});
+    }
+  </script>
+
+</body>
+</html>
+
